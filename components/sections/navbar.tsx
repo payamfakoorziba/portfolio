@@ -11,7 +11,7 @@ const navLinks = [
 
 const Navbar = () => {
   return (
-    <Container className="py-5 flex items-center justify-between absolute top-0 left-1/2 -translate-x-1/2 w-full">
+    <Container className="py-5 flex items-center justify-between absolute top-0 left-1/2 -translate-x-1/2 w-full z-10">
       <Logo />
       <nav>
         <ul className="hidden md:flex items-center gap-x-8 lg:gap-x-10 font-light text-base">
