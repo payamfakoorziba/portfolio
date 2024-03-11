@@ -6,12 +6,12 @@ import { Button } from "../ui/button";
 const Hero = () => {
   return (
     <Container>
-      <div className="flex flex-col-reverse gap-y-10 md:flex-row justify-between items-center md:pt-32 gap-x-10">
+      <div className="flex flex-col-reverse gap-y-10 md:flex-row justify-between items-center md:pt-20 gap-x-10">
         <div className="flex flex-col flex-1 items-center md:items-start text-center md:text-start">
           <h1 className="text-4xl md:text-6xl font-semibold tracking-tight">
-            Hi, I&apos;m Payam.
+            Hi, I&apos;m Payam
           </h1>
-          <h2 className="text-lg md:text-2xl tracking-tighter mt-2 md:mt-6 text-white/60">
+          <h2 className="text-lg md:text-2xl tracking-tighter mt-2 md:mt-6 text-white/80">
             Web designer and developer
           </h2>
           <p className="text-sm md:text-base mt-6 md:mt-12 leading-8 text-balance">
@@ -23,8 +23,8 @@ const Hero = () => {
             Get in touch
           </Button>
         </div>
-        <div className="rounded-full relative size-32 md:size-[300px] lg:size-[400px] overflow-hidden shadow-md shadow-white/20 flex-shrink-0">
-          <div className="inset-0 bg-black/20 absolute z-10" />
+        <div className="rounded-full relative size-32 md:size-[300px] lg:size-[350px] overflow-hidden shadow-md shadow-white/5 flex-shrink-0">
+          <div className="inset-0 bg-black/15 absolute z-10" />
           <Image
             src={ProfilePic}
             alt="Payam Fakoorziba"
