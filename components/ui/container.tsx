@@ -3,12 +3,17 @@ import { cn } from "@/lib/utils";
 const Container = ({
   children,
   className,
+  id,
 }: {
   children?: React.ReactNode;
   className?: string;
+  id?: string;
 }) => {
   return (
-    <section className={cn("max-w-7xl mx-auto px-4 md:px-6 w-full", className)}>
+    <section
+      id={id}
+      className={cn("max-w-7xl mx-auto px-4 md:px-6 w-full", className)}
+    >
       {children}
     </section>
   );

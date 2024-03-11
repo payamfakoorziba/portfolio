@@ -3,7 +3,7 @@ import MyWork from "@/components/sections/my-work";
 
 export default function Home() {
   return (
-    <main className="relative flex flex-col w-full gap-y-20">
+    <main className="flex flex-col w-full gap-y-20">
       {/* Grid background */}
       <div className="absolute bg-grid-white/10 top-0 inset-x-0 bottom-1/3 -mt-20 -z-10">
         {/* Radial gradient for the container to give a faded look */}
