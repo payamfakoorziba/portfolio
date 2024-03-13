@@ -21,9 +21,7 @@ const Hero = () => {
             <br className="block sm:hidden" />
             Let&apos;s talk.
           </p>
-          <Button className="bg-white/20 font-normal rounded-sm hover:bg-white/10 hover:text-white/90 w-fit mt-6">
-            Get in touch
-          </Button>
+          <Button className="w-fit mt-6">Get in touch</Button>
         </div>
         <div className="hidden md:block rounded-full relative size-24 md:size-[300px] lg:size-[350px] overflow-hidden shadow-md shadow-white/5 flex-shrink-0">
           <div className="inset-0 bg-black/15 absolute z-10" />

@@ -8,6 +8,7 @@ import ChatAppDesign2 from "@/public/ChatAppDesign2.png";
 import HCLConsultDesign1 from "@/public/HCLConsultDesign1.png";
 import HCLConsultDesign2 from "@/public/HCLConsultDesign2.png";
 import { cn } from "@/lib/utils";
+import { Button } from "../ui/button";
 
 const projects = [
   {
@@ -104,14 +105,14 @@ const WebsiteDisplay = ({
         className
       )}
     >
-      <div className="flex flex-col gap-y-6 md:w-full">
-        <p className="text-lg md:text-xl uppercase text-white/60 tracking-[0.2em]">
+      <div className="flex flex-col gap-y-10 md:w-full">
+        <p className="text-lg md:text-lg lg:text-xl uppercase text-white/60 tracking-[0.2em]">
           Latest Work
         </p>
-        {/* Tags */}
-        <h2 className="-ml-0.5 text-5xl md:text-6xl font-semibold text-white">
+        <h2 className="-ml-0.5 text-4xl lg:text-5xl font-semibold text-white tracking-wide leading-normal -mt-5">
           {title}
         </h2>
+        {/* Tags */}
         {tags && (
           <div className="flex flex-wrap gap-2">
             {tags.map((tag) => (
@@ -126,7 +127,8 @@ const WebsiteDisplay = ({
             ))}
           </div>
         )}
-        <p className="text-sm md:text-base leading-loose mt-2">{description}</p>
+        <p className="text-sm md:text-base leading-loose">{description}</p>
+        <Button className="w-fit">View Project</Button>
       </div>
       <GradientCard className="relative w-full aspect-square rounded-md group overflow-hidden transition duration-200">
         <div className="absolute inset-0 bg-black opacity-10 group-hover:opacity-5 transition-opacity ease-in-out duration-200 z-20" />
