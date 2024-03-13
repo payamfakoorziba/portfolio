@@ -1,11 +1,12 @@
 import Hero from "@/components/sections/hero";
 import MyWork from "@/components/sections/my-work";
 import Testimonials from "@/components/sections/testimonials";
+import WantToWork from "@/components/sections/want-to-work";
 import WhatIDo from "@/components/sections/what-I-do";
 
 export default function Home() {
   return (
-    <main className="relative flex flex-col w-fit mx-auto gap-y-16 pb-20">
+    <main className="relative flex flex-col gap-y-16">
       {/* Grid background */}
       <div className="absolute bg-grid-white/5 top-0 inset-x-0 h-1/4 -mt-20 -z-10">
         {/* Radial gradient for the container to give a faded look */}
@@ -19,6 +20,7 @@ export default function Home() {
       <MyWork />
       <WhatIDo />
       <Testimonials />
+      <WantToWork />
     </main>
   );
 }

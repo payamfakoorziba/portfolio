@@ -1,3 +1,4 @@
+import TwoColumnGrid from "../two-column-grid";
 import Container from "../ui/container";
 
 const WhatIDo = () => {
@@ -5,7 +6,7 @@ const WhatIDo = () => {
     <Container>
       <section className="flex flex-col w-full gap-y-10">
         <h3 className="font-medium text-5xl md:text-6xl">What I do</h3>
-        <div className="flex flex-col gap-y-6 lg:flex-row gap-x-10 lg:gap-x-40">
+        <TwoColumnGrid>
           <div className="w-full">
             <h4 className="text-3xl md:text-4xl mb-6 w-full">Design</h4>
             <p className="leading-loose">
@@ -24,7 +25,7 @@ const WhatIDo = () => {
               content without hassle.
             </p>
           </div>
-        </div>
+        </TwoColumnGrid>
       </section>
     </Container>
   );

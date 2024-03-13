@@ -9,6 +9,7 @@ import HCLConsultDesign1 from "@/public/HCLConsultDesign1.png";
 import HCLConsultDesign2 from "@/public/HCLConsultDesign2.png";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
+import TwoColumnGrid from "../two-column-grid";
 
 const projects = [
   {
@@ -99,12 +100,7 @@ const WebsiteDisplay = ({
   className?: string;
 }) => {
   return (
-    <div
-      className={cn(
-        "flex flex-col md:flex-row justify-between w-full gap-6 md:gap-12 lg:gap-40 shrink-0",
-        className
-      )}
-    >
+    <TwoColumnGrid className={className}>
       <div className="flex flex-col gap-y-10 md:w-full">
         <p className="text-lg md:text-lg lg:text-xl uppercase text-white/60 tracking-[0.2em]">
           Latest Work
@@ -150,7 +146,7 @@ const WebsiteDisplay = ({
           )}
         />
       </GradientCard>
-    </div>
+    </TwoColumnGrid>
   );
 };
 
