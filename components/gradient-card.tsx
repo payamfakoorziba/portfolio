@@ -12,11 +12,11 @@ const GradientCard = ({
     <div
       style={
         {
-          "--background": "86 86 94 / 0.4",
+          "--background": "86 86 94 / 0.7",
           "--bg-color":
             "linear-gradient(rgb(var(--background)), rgb(var(--background)))",
           "--border-color": `linear-gradient(145deg,
-            rgb(255 255 255 / 0.5) 0%,
+            rgb(255 255 255 / 0.5 ) 0%,
             rgb(255 255 255 / 0) 100%)
       `,
         } as CSSProperties

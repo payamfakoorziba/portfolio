@@ -1,8 +1,10 @@
 import Image, { StaticImageData } from "next/image";
 import GradientCard from "../gradient-card";
 import Container from "../ui/container";
-import Ship4x6Design from "@/public/Ship4x6Design1.png";
+import Ship4x6Design1 from "@/public/Ship4x6Design1.png";
 import Ship4x6Design2 from "@/public/Ship4x6Design2.png";
+import ChatAppDesign1 from "@/public/ChatAppDesign1.png";
+import ChatAppDesign2 from "@/public/ChatAppDesign2.png";
 import { cn } from "@/lib/utils";
 
 const projects = [
@@ -11,7 +13,7 @@ const projects = [
     description:
       "Designed and developed a Canadian shipping label e-commerce website, enabling seamless management of products, customers, and users through a robust admin dashboard.",
     url: "payamfkz.com",
-    frontImage: Ship4x6Design,
+    frontImage: Ship4x6Design1,
     backImage: Ship4x6Design2,
     tags: [
       "E-commerce",
@@ -25,12 +27,12 @@ const projects = [
     ],
   },
   {
-    title: "Ship4x6",
+    title: "Chat App Website",
     description:
-      "Designed and developed a Canadian shipping label e-commerce website, enabling seamless management of products, customers, and users through a robust admin dashboard.",
+      "Designed a chat app website that feels like a cozy chat room: simple, vibrant, and easy to use. It's all about keeping the conversation flowing and making everyone feel right at home.",
     url: "payamfkz.com",
-    frontImage: Ship4x6Design,
-    backImage: Ship4x6Design2,
+    frontImage: ChatAppDesign1,
+    backImage: ChatAppDesign2,
     tags: [
       "E-commerce",
       "Website Design",
@@ -43,11 +45,11 @@ const projects = [
     ],
   },
   {
-    title: "Ship4x6",
+    title: "HCL Consulting",
     description:
-      "Designed and developed a Canadian shipping label e-commerce website, enabling seamless management of products, customers, and users through a robust admin dashboard.",
+      "Designed a user-friendly consultancy website with a clean look and interactive features, making it easy to explore our services and see our expertise in action.",
     url: "payamfkz.com",
-    frontImage: Ship4x6Design,
+    frontImage: Ship4x6Design1,
     backImage: Ship4x6Design2,
     tags: [
       "E-commerce",
@@ -96,7 +98,7 @@ const WebsiteDisplay = ({
   return (
     <div
       className={cn(
-        "flex flex-col md:flex-row justify-between w-full md:gap-12 lg:gap-32 shrink-0",
+        "flex flex-col md:flex-row justify-between w-full gap-6 md:gap-12 lg:gap-40 shrink-0",
         className
       )}
     >
@@ -122,17 +124,24 @@ const WebsiteDisplay = ({
         )}
         <p className="text-base leading-loose mt-8">{description}</p>
       </div>
-      <GradientCard className="relative w-full aspect-square">
+      <GradientCard className="relative w-full aspect-square rounded-md group overflow-hidden">
+        <div className="absolute inset-0 bg-black opacity-10 group-hover:opacity-5 transition-opacity duration-200 ease-in-out z-20" />
         <Image
           src={frontImage}
           alt={title}
-          className="absolute bottom-0 left-10 z-10 w-2/3 "
+          className={cn(
+            "absolute bottom-0 left-10 md:left-5 lg:left-10 z-10",
+            "w-2/3 lg:w-7/12",
+            "group-hover:transform group-hover:scale-[101%] transition-transform duration-200 ease-in-out origin-bottom"
+          )}
         />
         <Image
           src={backImage}
           alt={title}
-          className="
-          absolute top-0 right-10 w-2/3"
+          className={cn(
+            "absolute top-0 right-10 md:right-5 lg:right-10 w-7/12",
+            "opacity-70 group-hover:opacity-80 transition-opacity duration-200 ease-in-out"
+          )}
         />
       </GradientCard>
     </div>
