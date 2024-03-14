@@ -68,7 +68,7 @@ const GetInTouch = ({
           Get in touch
         </Button>
       </DialogTrigger>
-      <DialogContent className="bg-gradient-to-br from-[#5C5C61]/50 from-50% backdrop-blur-sm border-none shadow-lg">
+      <DialogContent className="bg-gradient-to-br from-[#5C5C61]/50 from-50% backdrop-blur-sm border-none shadow-lg rounded-lg">
         <DialogHeader>
           <DialogTitle>Get in touch</DialogTitle>
           <DialogDescription className="text-white">
