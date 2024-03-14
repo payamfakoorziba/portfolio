@@ -23,6 +23,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "./ui/textarea";
+import { useState } from "react";
 
 const formSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -37,6 +38,8 @@ const GetInTouch = ({
   size?: "default" | "sm" | "lg" | "icon";
   className?: string;
 }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -51,7 +54,15 @@ const GetInTouch = ({
   }
 
   return (
-    <Dialog>
+    <Dialog
+      open={isOpen}
+      onOpenChange={(open) => {
+        setIsOpen(open);
+        if (!open) {
+          form.reset();
+        }
+      }}
+    >
       <DialogTrigger asChild>
         <Button size={size} className={className}>
           Get in touch
@@ -61,7 +72,8 @@ const GetInTouch = ({
         <DialogHeader>
           <DialogTitle>Get in touch</DialogTitle>
           <DialogDescription className="text-white">
-            I'm always looking for new opportunities and people to work with.
+            If you need a modern and powerful website for your business, startup
+            or yourself, I am available for work.
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>

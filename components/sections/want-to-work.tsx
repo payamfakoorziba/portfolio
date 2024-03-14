@@ -1,7 +1,6 @@
 import Link from "next/link";
 import TwoColumnGrid from "../two-column-grid";
 import Container from "../ui/container";
-import { Button } from "../ui/button";
 import GetInTouch from "../get-in-touch-button";
 
 const WantToWork = () => {
