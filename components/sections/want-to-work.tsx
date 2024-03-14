@@ -2,13 +2,14 @@ import Link from "next/link";
 import TwoColumnGrid from "../two-column-grid";
 import Container from "../ui/container";
 import { Button } from "../ui/button";
+import GetInTouch from "../get-in-touch-button";
 
 const WantToWork = () => {
   return (
     <div className="w-full bg-gradient-to-br from-[#5C5C61] pt-10 pb-20 relative">
       <Container>
         <TwoColumnGrid>
-          <h3 className="font-medium text-5xl scroll-mt-10 w-full">
+          <h3 className="font-medium text-2xl md:text-4xl w-full">
             Want to work?
           </h3>
           <div className="w-full">
@@ -20,11 +21,11 @@ const WantToWork = () => {
                 payamfakoor@gmail.com
               </Link>
             </p>
-            <Button className="mt-6">Get in touch</Button>
+            <GetInTouch className="mt-8" />
           </div>
         </TwoColumnGrid>
 
-        <p className="absolute bottom-2 text-sm text-white/80 left-1/2 -translate-x-1/2">
+        <p className="absolute text-center bottom-2 text-[9px] sm:text-xs md:text-sm text-white/80 left-1/2 -translate-x-1/2">
           ©{new Date().getFullYear()} Payam Technologies Inc. All rights
           reserved.
         </p>

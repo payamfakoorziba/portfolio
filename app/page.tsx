@@ -10,7 +10,8 @@ export default function Home() {
       {/* Grid background */}
       <div className="absolute bg-grid-white/5 top-0 inset-x-0 h-1/4 -mt-20 -z-10">
         {/* Radial gradient for the container to give a faded look */}
-        <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,transparent,black)] bg-[#3F3F45]" />
+        <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,transparent,black)] bg-background" />
+        <div className="absolute bottom-0 inset-x-0 h-10 bg-gradient-to-t from-background" />
       </div>
 
       {/* Light gradients */}

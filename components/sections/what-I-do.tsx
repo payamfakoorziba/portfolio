@@ -5,10 +5,14 @@ const WhatIDo = () => {
   return (
     <Container>
       <section className="flex flex-col w-full gap-y-10">
-        <h3 className="font-medium text-5xl md:text-6xl">What I do</h3>
+        <h3 className="font-medium text-4xl sm:text-5xl md:text-6xl">
+          What I do
+        </h3>
         <TwoColumnGrid>
           <div className="w-full">
-            <h4 className="text-3xl md:text-4xl mb-6 w-full">Design</h4>
+            <h4 className="font-bold text-2xl md:text-4xl mb-6 w-full">
+              Design
+            </h4>
             <p className="leading-loose">
               I design beautiful and powerful websites for modern businesses.
               Any business today needs a website that wins customers’ trust and
@@ -17,7 +21,7 @@ const WhatIDo = () => {
             </p>
           </div>
           <div className="w-full">
-            <h4 className="text-3xl md:text-4xl mb-6">Development</h4>
+            <h4 className="font-bold text-2xl md:text-4xl mb-6">Development</h4>
             <p className="leading-loose">
               I create responsive, custom websites using React and Next.js,
               offering both speed and flexibility. They're designed to be

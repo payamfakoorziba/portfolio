@@ -37,16 +37,7 @@ const projects = [
     url: "payamfkz.com",
     frontImage: ChatAppDesign1,
     backImage: ChatAppDesign2,
-    tags: [
-      "E-commerce",
-      "Website Design",
-      "Storefront Development",
-      "Figma",
-      "React",
-      "Typescript",
-      "Next.js",
-      "TailwindCSS",
-    ],
+    tags: ["Landing Page", "Website Design", "Figma", "Concept"],
   },
   {
     title: "HCL Consulting",
@@ -56,10 +47,8 @@ const projects = [
     frontImage: HCLConsultDesign1,
     backImage: HCLConsultDesign2,
     tags: [
-      "E-commerce",
       "Website Design",
-      "Storefront Development",
-      "Figma",
+      "Website Development",
       "React",
       "Typescript",
       "Next.js",
@@ -101,7 +90,7 @@ const WebsiteDisplay = ({
 }) => {
   return (
     <TwoColumnGrid className={className}>
-      <div className="flex flex-col gap-y-10 md:w-full">
+      <div className="flex flex-col gap-y-6 md:gap-y-10 md:w-full">
         <p className="text-lg md:text-lg lg:text-xl uppercase text-white/60 tracking-[0.2em]">
           Latest Work
         </p>

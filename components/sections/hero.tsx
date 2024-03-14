@@ -2,11 +2,12 @@ import Image from "next/image";
 import Container from "../ui/container";
 import ProfilePic from "@/public/profile-pic.jpeg";
 import { Button } from "../ui/button";
+import GetInTouch from "../get-in-touch-button";
 
 const Hero = () => {
   return (
     <Container>
-      <div className="mt-20 md:mt-0 flex flex-col-reverse gap-y-10 md:flex-row justify-between items-center md:pt-20 gap-x-10">
+      <div className="mt-20 md:mt-0 flex flex-col-reverse gap-y-10 md:flex-row justify-between items-center pt-20 md:pt-40 gap-x-10 mb-10">
         <div className="flex flex-col flex-1 items-start md:items-start md:text-start">
           <h1 className="text-5xl md:text-6xl font-semibold tracking-tight">
             Hi, I&apos;m Payam
@@ -21,7 +22,7 @@ const Hero = () => {
             <br className="block sm:hidden" />
             Let&apos;s talk.
           </p>
-          <Button className="w-fit mt-6">Get in touch</Button>
+          <GetInTouch className="mt-8 md:mt-12" />
         </div>
         <div className="hidden md:block rounded-full relative size-24 md:size-[300px] lg:size-[350px] overflow-hidden shadow-md shadow-white/5 flex-shrink-0">
           <div className="inset-0 bg-black/15 absolute z-10" />

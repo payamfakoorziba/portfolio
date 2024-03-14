@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-[#3F3F45] text-white scroll-smooth">
-      <body className={cn(inter.className, "pt-20")}>
+      <body className={cn(inter.className)}>
         <Navbar />
         {children}
       </body>
