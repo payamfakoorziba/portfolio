@@ -24,7 +24,7 @@ const Navbar = () => {
               </li>
             ))}
           </div>
-          <li>
+          <li className="hidden md:block">
             <GetInTouch size="sm" />
           </li>
         </ul>
