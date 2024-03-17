@@ -10,6 +10,7 @@ import HCLConsultDesign2 from "@/public/HCLConsultDesign2.png";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 import TwoColumnGrid from "../two-column-grid";
+import Appear from "../appear";
 
 const projects = [
   {
@@ -61,11 +62,14 @@ const MyWork = () => {
   return (
     <Container className="space-y-20 scroll-mt-10" id="my-work">
       {projects.map((project, index) => (
-        <WebsiteDisplay
-          key={index}
-          {...project}
-          className={index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}
-        />
+        <Appear key={project.title}>
+          <WebsiteDisplay
+            key={project.title}
+            index={index}
+            {...project}
+            alternate={index % 2 === 0}
+          />
+        </Appear>
       ))}
     </Container>
   );
@@ -79,6 +83,8 @@ const WebsiteDisplay = ({
   backImage,
   tags,
   className,
+  index,
+  alternate,
 }: {
   title: string;
   description: string;
@@ -87,10 +93,17 @@ const WebsiteDisplay = ({
   backImage: StaticImageData;
   tags?: string[];
   className?: string;
+  index: number;
+  alternate?: boolean;
 }) => {
   return (
     <TwoColumnGrid className={className}>
-      <div className="flex flex-col gap-y-6 md:gap-y-10 md:w-full">
+      <div
+        className={cn(
+          "flex flex-col gap-y-6 md:gap-y-10 md:w-full",
+          index % 2 === 0 ? "md:-order-1" : "md:order-1"
+        )}
+      >
         <p className="text-lg md:text-lg lg:text-xl uppercase text-white/60 tracking-[0.2em]">
           Recent project
         </p>

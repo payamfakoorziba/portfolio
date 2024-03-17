@@ -10,7 +10,7 @@ const TwoColumnGrid = ({
   return (
     <div
       className={cn(
-        "flex flex-col md:flex-row justify-between w-full gap-6 md:gap-12 lg:gap-40 shrink-0",
+        "grid grid-cols-1 md:grid-cols-2 w-full gap-6 md:gap-12 lg:gap-40",
         className
       )}
     >
