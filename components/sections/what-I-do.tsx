@@ -1,3 +1,5 @@
+"use client";
+
 import TwoColumnGrid from "../two-column-grid";
 import Container from "../ui/container";
 import figma from "../../public/figma_logo.svg";
@@ -6,6 +8,7 @@ import next from "../../public/next_logo.svg";
 import framer_motion from "../../public/framer_motion_logo.svg";
 import tailwind from "../../public/tailwind_logo.svg";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const WhatIDo = () => {
   return (
@@ -21,14 +24,20 @@ const WhatIDo = () => {
                 <h4 className="font-medium text-2xl md:text-3xl w-full">
                   Design
                 </h4>
-                <div className="absolute rounded-full -bottom-1 mx-px h-px w-full bg-gradient-to-r from-white/50 to-transparent" />
+                <motion.div
+                  initial={{ width: 0, right: 0 }}
+                  animate={{ width: "100%" }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                  className="absolute rounded-full -bottom-1 mx-px h-px w-full bg-gradient-to-r from-white/50 to-transparent"
+                />
               </div>
+
               <Image
                 src={figma}
                 alt="Figma logo"
                 width={40}
                 height={40}
-                className="size-8 w-fit"
+                className="size-8 hover:scale-110 duration-200 ease-in-out transition w-fit opacity-70 hover:opacity-100"
               />
             </div>
             <p className="leading-loose">
@@ -44,36 +53,41 @@ const WhatIDo = () => {
                 <h4 className="font-medium text-2xl md:text-3xl w-full">
                   Development
                 </h4>
-                <div className="absolute rounded-full -bottom-1 mx-px h-px w-full bg-gradient-to-r from-white/50 to-transparent" />
+                <motion.div
+                  initial={{ width: 0, right: 0 }}
+                  animate={{ width: "100%" }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                  className="absolute rounded-full -bottom-1 mx-px h-px bg-gradient-to-r from-white/50 to-transparent"
+                />
               </div>
-              <div className="flex gap-x-2">
+              <div className="flex gap-x-3">
                 <Image
                   src={next}
                   alt="Next.js logo"
                   width={40}
                   height={40}
-                  className="size-8"
+                  className="size-8 hover:scale-110 duration-200 ease-in-out transition opacity-70 hover:opacity-100"
                 />
                 <Image
                   src={react}
                   alt="React logo"
                   width={40}
                   height={40}
-                  className="size-8"
+                  className="size-8 hover:scale-110 duration-200 ease-in-out transition opacity-70 hover:opacity-100"
                 />
                 <Image
                   src={tailwind}
                   alt="Tailwind CSS logo"
                   width={40}
                   height={40}
-                  className="size-8"
+                  className="size-8 hover:scale-110 duration-200 ease-in-out transition opacity-70 hover:opacity-100"
                 />
                 <Image
                   src={framer_motion}
                   alt="Framer Motion logo"
                   width={40}
                   height={40}
-                  className="size-8 p-1"
+                  className="size-8 hover:scale-110 duration-200 ease-in-out transition opacity-70 hover:opacity-100 p-1"
                 />
               </div>
             </div>

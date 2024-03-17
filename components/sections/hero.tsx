@@ -30,7 +30,7 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.8, ease: "linear" }}
+            transition={{ delay: 0.4, duration: 0.8, ease: "linear" }}
           >
             <p className="text-sm md:text-base mt-6 md:mt-12 leading-8">
               I design and build custom websites tailored to elevate your
@@ -42,7 +42,7 @@ const Hero = () => {
             <GetInTouch className="mt-6 md:mt-12" />
           </motion.div>
         </div>
-        <motion.div className="hidden md:block rounded-full relative size-24 md:size-[300px] lg:size-[350px] overflow-hidden shadow-md shadow-white/5 flex-shrink-0">
+        <div className="hidden md:block rounded-full relative size-24 md:size-[300px] lg:size-[350px] overflow-hidden shadow-md shadow-white/5 flex-shrink-0">
           <div className="inset-0 bg-black/15 absolute z-10" />
           <Image
             src={ProfilePic}
@@ -51,7 +51,7 @@ const Hero = () => {
             fill
             className="object-cover -scale-x-100"
           />
-        </motion.div>
+        </div>
       </div>
     </Container>
   );

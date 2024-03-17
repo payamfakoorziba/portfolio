@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Container from "../ui/container";
-import { Button } from "../ui/button";
 import GetInTouch from "../get-in-touch-button";
 
 const navLinks = [
@@ -36,5 +35,14 @@ const Navbar = () => {
 export default Navbar;
 
 const Logo = () => {
-  return <p className="text-xl md:font-semibold">Payam.</p>;
+  return (
+    <Link
+      href="/"
+      className="text-xl md:font-semibold
+    hover:text-neutral-300 transition ease-in-out duration-300 cursor-pointer
+  "
+    >
+      Payam.
+    </Link>
+  );
 };
