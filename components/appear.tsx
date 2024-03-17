@@ -1,9 +1,28 @@
 "use client";
 
-import { motion, useInView, useAnimation } from "framer-motion";
+import {
+  motion,
+  useInView,
+  useAnimation,
+  Variants,
+  Transition,
+} from "framer-motion";
 import { useEffect, useRef } from "react";
 
-const Appear = ({ children }: { children: React.ReactNode }) => {
+const Appear = ({
+  children,
+  variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  },
+  transition = { delay: 0.2, duration: 0.3 },
+  className,
+}: {
+  children?: React.ReactNode;
+  variants?: Variants & { hidden: any; visible: any };
+  transition?: Transition;
+  className?: string;
+}) => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
@@ -20,13 +39,11 @@ const Appear = ({ children }: { children: React.ReactNode }) => {
   return (
     <motion.div
       ref={ref}
-      variants={{
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0 },
-      }}
-      initial="hidden"
+      variants={variants}
+      initial={"hidden"}
       animate={controls}
-      transition={{ delay: 0.2, duration: 0.3 }}
+      transition={transition}
+      className={className}
     >
       {children}
     </motion.div>

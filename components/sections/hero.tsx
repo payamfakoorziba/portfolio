@@ -28,9 +28,9 @@ const Hero = () => {
             Web designer and developer
           </motion.h2>
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.8, ease: "linear" }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.3 }}
           >
             <p className="text-sm md:text-base mt-6 md:mt-12 leading-8">
               I design and build custom websites tailored to elevate your

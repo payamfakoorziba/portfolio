@@ -9,6 +9,7 @@ import framer_motion from "../../public/framer_motion_logo.svg";
 import tailwind from "../../public/tailwind_logo.svg";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Appear from "../appear";
 
 const WhatIDo = () => {
   return (
@@ -24,10 +25,12 @@ const WhatIDo = () => {
                 <h4 className="font-medium text-2xl md:text-3xl w-full">
                   Design
                 </h4>
-                <motion.div
-                  initial={{ width: 0, right: 0 }}
-                  animate={{ width: "100%" }}
-                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                <Appear
+                  variants={{
+                    hidden: { width: 0, right: 0 },
+                    visible: { width: "100%" },
+                  }}
+                  transition={{ duration: 0.8, ease: "easeInOut", delay: 0.25 }}
                   className="absolute rounded-full -bottom-1 mx-px h-px w-full bg-gradient-to-r from-white/50 to-transparent"
                 />
               </div>
@@ -53,11 +56,13 @@ const WhatIDo = () => {
                 <h4 className="font-medium text-2xl md:text-3xl w-full">
                   Development
                 </h4>
-                <motion.div
-                  initial={{ width: 0, right: 0 }}
-                  animate={{ width: "100%" }}
-                  transition={{ duration: 0.8, ease: "easeInOut" }}
-                  className="absolute rounded-full -bottom-1 mx-px h-px bg-gradient-to-r from-white/50 to-transparent"
+                <Appear
+                  variants={{
+                    hidden: { width: 0, right: 0 },
+                    visible: { width: "100%" },
+                  }}
+                  transition={{ duration: 0.8, ease: "easeInOut", delay: 0.25 }}
+                  className="absolute rounded-full -bottom-1 mx-px h-px w-full bg-gradient-to-r from-white/50 to-transparent"
                 />
               </div>
               <div className="flex gap-x-3">
