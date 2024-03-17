@@ -24,6 +24,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "./ui/textarea";
 import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 const formSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -64,7 +65,10 @@ const GetInTouch = ({
       }}
     >
       <DialogTrigger asChild>
-        <Button size={size} className={className}>
+        <Button
+          size={size}
+          className={cn("bg-white/85 hover:bg-white/70 text-black", className)}
+        >
           Get in touch
         </Button>
       </DialogTrigger>
@@ -85,7 +89,11 @@ const GetInTouch = ({
                 <FormItem>
                   <FormLabel>Full name:</FormLabel>
                   <FormControl>
-                    <Input {...field} className="bg-transparent" />
+                    <Input
+                      {...field}
+                      placeholder="James Bond"
+                      className="bg-transparent"
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -98,7 +106,11 @@ const GetInTouch = ({
                 <FormItem>
                   <FormLabel>Email:</FormLabel>
                   <FormControl>
-                    <Input {...field} className="bg-transparent" />
+                    <Input
+                      {...field}
+                      placeholder="james@gmail.com"
+                      className="bg-transparent"
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -111,7 +123,11 @@ const GetInTouch = ({
                 <FormItem>
                   <FormLabel>Message:</FormLabel>
                   <FormControl>
-                    <Textarea {...field} className="bg-transparent" />
+                    <Textarea
+                      {...field}
+                      placeholder="Looking for a professional portfolio website.."
+                      className="bg-transparent"
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

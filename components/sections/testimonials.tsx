@@ -27,7 +27,7 @@ const testimonials = [
 const Testimonials = () => {
   return (
     <Container id="testimonials">
-      <h3 className="font-medium text-4xl sm:text-5xl md:text-6xl">
+      <h3 className="font-medium text-4xl sm:text-5xl md:text-4xl">
         Testimonials
       </h3>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-8">

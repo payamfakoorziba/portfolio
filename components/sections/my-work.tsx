@@ -92,7 +92,7 @@ const WebsiteDisplay = ({
     <TwoColumnGrid className={className}>
       <div className="flex flex-col gap-y-6 md:gap-y-10 md:w-full">
         <p className="text-lg md:text-lg lg:text-xl uppercase text-white/60 tracking-[0.2em]">
-          Latest Work
+          Recent project
         </p>
         <h2 className="-ml-0.5 text-4xl lg:text-5xl font-semibold text-white tracking-wide leading-normal -mt-5">
           {title}

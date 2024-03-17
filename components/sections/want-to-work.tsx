@@ -5,11 +5,11 @@ import GetInTouch from "../get-in-touch-button";
 
 const WantToWork = () => {
   return (
-    <div className="w-full bg-gradient-to-br from-[#5C5C61] pt-10 pb-20 relative">
-      <Container>
+    <div className="w-full bg-gradient-to-br from-[#5C5C61] pt-10 relative">
+      <Container className="flex flex-col gap-y-10">
         <TwoColumnGrid>
-          <h3 className="font-medium text-2xl md:text-4xl w-full">
-            Want to work?
+          <h3 className="font-medium text-2xl w-full">
+            Want to work together?
           </h3>
           <div className="w-full">
             <p className="leading-relaxed">
@@ -24,7 +24,7 @@ const WantToWork = () => {
           </div>
         </TwoColumnGrid>
 
-        <p className="absolute text-center bottom-2 text-[9px] sm:text-xs md:text-sm text-white/80 left-1/2 -translate-x-1/2">
+        <p className="text-center bottom-2 text-xs sm:text-xs md:text-sm text-white/80 pb-4">
           ©{new Date().getFullYear()} Payam Technologies Inc. All rights
           reserved.
         </p>
