@@ -14,9 +14,9 @@ const WhatIDo = () => {
         <h3 className="font-medium text-4xl sm:text-5xl md:text-4xl">
           What I do
         </h3>
-        <TwoColumnGrid>
-          <div className="w-full space-y-6">
-            <div className="flex flex-col items-start gap-6">
+        <TwoColumnGrid className="gap-y-10">
+          <div className="w-full space-y-10">
+            <div className="flex flex-col items-start gap-4">
               <div className="relative w-fit">
                 <h4 className="font-medium text-2xl md:text-3xl w-full">
                   Design
@@ -38,8 +38,8 @@ const WhatIDo = () => {
               that standard.
             </p>
           </div>
-          <div className="w-full space-y-6">
-            <div className="flex flex-col items-start gap-6">
+          <div className="w-full space-y-10">
+            <div className="flex flex-col items-start gap-4">
               <div className="relative w-fit">
                 <h4 className="font-medium text-2xl md:text-3xl w-full">
                   Development
