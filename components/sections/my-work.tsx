@@ -11,13 +11,14 @@ import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 import TwoColumnGrid from "../two-column-grid";
 import Appear from "../appear";
+import Link from "next/link";
 
 const projects = [
   {
     title: "Ship4x6",
     description:
       "Designed and developed a Canadian shipping label e-commerce website, enabling seamless management of products, customers, and users through a robust admin dashboard.",
-    url: "payamfkz.com",
+    url: "https://www.ship4x6.com/",
     frontImage: Ship4x6Design1,
     backImage: Ship4x6Design2,
     tags: [
@@ -35,7 +36,7 @@ const projects = [
     title: "Chat App Website",
     description:
       "Designed a chat app website that feels like a cozy chat room: simple, vibrant, and easy to use. It's all about keeping the conversation flowing and making everyone feel right at home.",
-    url: "payamfkz.com",
+    url: "https://www.figma.com/proto/mQyZmybhiu6gXadA5VJLud/Practice%3A-Chat-App-Homepage-Design-(Copy)?type=design&node-id=107-17&t=GibmlQbjaJWJFn4e-1&scaling=min-zoom&page-id=107%3A2&mode=design",
     frontImage: ChatAppDesign1,
     backImage: ChatAppDesign2,
     tags: ["Landing Page", "Website Design", "Figma", "Concept"],
@@ -44,7 +45,7 @@ const projects = [
     title: "HCL Consulting",
     description:
       "Designed a user-friendly consultancy website with a clean look and interactive features, making it easy to explore our services and see our expertise in action.",
-    url: "payamfkz.com",
+    url: "https://www.hclconsult.ca/",
     frontImage: HCLConsultDesign1,
     backImage: HCLConsultDesign2,
     tags: [
@@ -134,27 +135,33 @@ const WebsiteDisplay = ({
           </div>
         )}
         <p className="text-sm md:text-base leading-loose">{description}</p>
-        <Button className="w-fit">View Project</Button>
+        <Button className="w-fit" asChild>
+          <Link target="_blank" href={url}>
+            View Project
+          </Link>
+        </Button>
       </div>
       <GradientCard className="relative w-full aspect-square rounded-md group overflow-hidden transition duration-200">
-        <div className="absolute inset-0 bg-black opacity-10 group-hover:opacity-5 transition-opacity ease-in-out duration-200 z-20" />
-        <Image
-          src={frontImage}
-          alt={title}
-          className={cn(
-            "absolute bottom-0 left-10 md:left-5 lg:left-10 z-10",
-            "w-2/3 lg:w-7/12",
-            "group-hover:transform group-hover:scale-[102%] transition-transform ease-in-out duration-200 origin-bottom"
-          )}
-        />
-        <Image
-          src={backImage}
-          alt={title}
-          className={cn(
-            "absolute top-0 right-10 md:right-5 lg:right-10 w-7/12",
-            "opacity-60 group-hover:opacity-80 group-hover:translate-x-0.5 origin-top transition ease-in-out duration-200"
-          )}
-        />
+        <Link href={url}>
+          <div className="absolute inset-0 bg-black opacity-10 group-hover:opacity-5 transition-opacity ease-in-out duration-200 z-20" />
+          <Image
+            src={frontImage}
+            alt={title}
+            className={cn(
+              "absolute bottom-0 left-10 md:left-5 lg:left-10 z-10",
+              "w-2/3 lg:w-7/12",
+              "group-hover:transform group-hover:scale-[102%] transition-transform ease-in-out duration-200 origin-bottom"
+            )}
+          />
+          <Image
+            src={backImage}
+            alt={title}
+            className={cn(
+              "absolute top-0 right-10 md:right-5 lg:right-10 w-7/12",
+              "opacity-60 group-hover:opacity-80 group-hover:translate-x-0.5 origin-top transition ease-in-out duration-200"
+            )}
+          />
+        </Link>
       </GradientCard>
     </TwoColumnGrid>
   );

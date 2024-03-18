@@ -3,31 +3,31 @@ import Container from "../ui/container";
 
 const testimonials = [
   {
-    name: "John Doe",
+    name: "Henry Cheng",
     position: "CEO",
-    company: "Company",
+    company: "Ship4x6",
     quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hac habitasse platea dictumst. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hac habitasse platea dictumst.",
+      "Payam delivered exceptional work for us. He communicated all updates to the project, and clearly understood and fulfilled our precise needs. Highly recommended for anyone looking for a dedicated and skilled web professional.",
   },
   {
-    name: "John Doe",
-    position: "CEO",
-    company: "Company",
+    name: "Pooya Namavar",
+    position: "Partner",
+    company: "HCL Consulting",
     quote:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam assumenda voluptas veritatis voluptatibus omnis fugiat, ex unde impedit porro, vel itaque enim dolores exercitationem eligendi ea perferendis, laboriosam illo asperiores quam ipsa accusamus praesentium.",
+      "Payam made our website with precision and insight, turning our vision into reality. We are very happy with the result and would recommend him to anyone looking for a professional web developer.",
   },
   {
-    name: "John Doe",
+    name: "Reza Fakoorziba",
     position: "CEO",
-    company: "Company",
+    company: "RastaCan Immigration Services",
     quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hac habitasse platea dictumst. Lorem ipsum dolor sit amet, consectetur adipiscing.",
+      "Payam created an admin dashboard for us that has made our work so much easier. It has helped us keep track of our clients and cases, and has made our workflow much more efficient. We are very satisfied with the result.",
   },
 ];
 
 const Testimonials = () => {
   return (
-    <Container id="testimonials">
+    <Container id="testimonials" className="scroll-mt-10">
       <h3 className="font-medium text-4xl sm:text-5xl md:text-4xl">
         Testimonials
       </h3>
@@ -45,10 +45,8 @@ const Testimonials = () => {
             <p className="flex-1 leading-loose">{testimonial.quote}</p>
             <div>
               <p className="font-semibold mt-4">{testimonial.name}</p>
-              <p className="font-medium text-white/90">
-                {testimonial.position}
-              </p>
-              <p className="text-white/80">{testimonial.company}</p>
+              <p className="font-medium">{testimonial.position}</p>
+              <p>{testimonial.company}</p>
             </div>
           </Appear>
         ))}

@@ -28,13 +28,12 @@ const items = [
 
 const WhatIDo = () => {
   return (
-    <Container>
+    <Container id="what-i-do" className="scroll-mt-10">
       <section className="flex flex-col w-full gap-y-10">
-        <Appear>
-          <h3 className="font-medium text-4xl sm:text-5xl md:text-4xl">
-            What I do
-          </h3>
-        </Appear>
+        <h3 className="font-medium text-4xl sm:text-5xl md:text-4xl">
+          What I do
+        </h3>
+
         <TwoColumnGrid className="gap-y-10">
           {items.map((item, index) => (
             <div key={index} className="w-full space-y-10">

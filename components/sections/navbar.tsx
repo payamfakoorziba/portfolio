@@ -2,9 +2,10 @@ import Link from "next/link";
 import Container from "../ui/container";
 import GetInTouch from "../get-in-touch-button";
 
-const navLinks = [
-  { name: "My Work", href: "#my-work" },
-  { name: "Testimonials", href: "/#testimonials" },
+const navItems = [
+  { name: "My Work", link: "#my-work" },
+  { name: "What I do", link: "/#what-i-do" },
+  { name: "Testimonials", link: "/#testimonials" },
 ];
 
 const Navbar = () => {
@@ -14,12 +15,12 @@ const Navbar = () => {
       <nav>
         <ul className="flex items-center gap-x-8 lg:gap-x-10 font-light text-base">
           <div className="hidden md:contents">
-            {navLinks.map((link) => (
+            {navItems.map((item) => (
               <li
-                key={link.name}
+                key={item.name}
                 className="hover:text-neutral-300 transition ease-in-out duration-300"
               >
-                <Link href={link.href}>{link.name}</Link>
+                <Link href={item.link}>{item.name}</Link>
               </li>
             ))}
           </div>
