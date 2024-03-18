@@ -1,3 +1,4 @@
+import Appear from "../appear";
 import Container from "../ui/container";
 
 const testimonials = [
@@ -32,10 +33,14 @@ const Testimonials = () => {
       </h3>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-8">
         {testimonials.map((testimonial, index) => (
-          <div
+          <Appear
             key={index}
             className="bg-gradient-to-br from-[#56565E] hover:bg-white/10 transition-colors p-8 rounded-lg shadow-md flex flex-col gap-y-4
             duration-400 ease-in-out transform cursor-default"
+            transition={{
+              delay: 0.25 + 0.1 * index,
+              duration: 0.4,
+            }}
           >
             <p className="flex-1 leading-loose">{testimonial.quote}</p>
             <div>
@@ -45,7 +50,7 @@ const Testimonials = () => {
               </p>
               <p className="text-white/80">{testimonial.company}</p>
             </div>
-          </div>
+          </Appear>
         ))}
       </div>
     </Container>

@@ -62,13 +62,14 @@ const MyWork = () => {
   return (
     <Container className="space-y-20 scroll-mt-10" id="my-work">
       {projects.map((project, index) => (
-        <Appear key={project.title}>
-          <WebsiteDisplay
-            key={project.title}
-            index={index}
-            {...project}
-            alternate={index % 2 === 0}
-          />
+        <Appear
+          key={project.title}
+          transition={{
+            ease: "easeInOut",
+            delay: 0.4,
+          }}
+        >
+          <WebsiteDisplay key={project.title} index={index} {...project} />
         </Appear>
       ))}
     </Container>
@@ -84,7 +85,6 @@ const WebsiteDisplay = ({
   tags,
   className,
   index,
-  alternate,
 }: {
   title: string;
   description: string;
@@ -94,7 +94,6 @@ const WebsiteDisplay = ({
   tags?: string[];
   className?: string;
   index: number;
-  alternate?: boolean;
 }) => {
   return (
     <TwoColumnGrid className={className}>
@@ -113,15 +112,24 @@ const WebsiteDisplay = ({
         {/* Tags */}
         {tags && (
           <div className="flex flex-wrap gap-2">
-            {tags.map((tag) => (
-              <span
+            {tags.map((tag, index) => (
+              <Appear
                 key={tag}
+                variants={{
+                  hidden: { scale: 0.9, opacity: 0, y: 10 },
+                  visible: { scale: 1, opacity: 1, y: 0 },
+                }}
+                transition={{
+                  duration: 0.3,
+                  ease: "easeInOut",
+                  delay: 0.25 + 0.1 * index,
+                }}
                 className="px-2 py-1 text-xs bg-white/10 rounded-sm text-white/80 cursor-default
                 hover:bg-white/20 hover:text-white/100 transition-colors duration-200 ease-in-out
                 "
               >
                 {tag}
-              </span>
+              </Appear>
             ))}
           </div>
         )}

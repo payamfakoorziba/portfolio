@@ -25,6 +25,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "./ui/textarea";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import LoadingSpinner from "./loading-spinner";
 
 const formSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -50,8 +51,22 @@ const GetInTouch = ({
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+  const isLoading = form.formState.isSubmitting;
+
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ data: values }),
+      });
+      setIsOpen(false);
+      form.reset();
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   return (
@@ -136,7 +151,10 @@ const GetInTouch = ({
           </form>
         </Form>
         <DialogFooter>
-          <Button onClick={form.handleSubmit(onSubmit)}>Submit</Button>
+          <Button onClick={form.handleSubmit(onSubmit)} disabled={isLoading}>
+            <LoadingSpinner className={isLoading ? "block mr-2" : "hidden"} />
+            Submit
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

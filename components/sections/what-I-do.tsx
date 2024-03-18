@@ -8,18 +8,84 @@ import next from "../../public/next_logo.svg";
 import framer_motion from "../../public/framer_motion_logo.svg";
 import tailwind from "../../public/tailwind_logo.svg";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Appear from "../appear";
+import { motion } from "framer-motion";
+
+const items = [
+  {
+    title: "Design",
+    description:
+      "I design beautiful and powerful websites for modern businesses. Any business today needs a website that wins customers’ trust and helps you do your business well. I make sure your website is up to that standard.",
+    images: [figma],
+  },
+  {
+    title: "Development",
+    description:
+      "I create responsive, custom websites using React and Next.js, offering both speed and flexibility. They're designed to be user-friendly, ensuring you and your team can easily manage content without hassle.",
+    images: [next, react, tailwind, framer_motion],
+  },
+];
 
 const WhatIDo = () => {
   return (
     <Container>
       <section className="flex flex-col w-full gap-y-10">
-        <h3 className="font-medium text-4xl sm:text-5xl md:text-4xl">
-          What I do
-        </h3>
+        <Appear>
+          <h3 className="font-medium text-4xl sm:text-5xl md:text-4xl">
+            What I do
+          </h3>
+        </Appear>
         <TwoColumnGrid className="gap-y-10">
-          <div className="w-full space-y-10">
+          {items.map((item, index) => (
+            <div key={index} className="w-full space-y-10">
+              <div className="flex flex-col items-start gap-4">
+                <div className="relative w-fit">
+                  <h4 className="font-medium text-2xl md:text-3xl w-full">
+                    {item.title}
+                  </h4>
+                  <Appear
+                    variants={{
+                      hidden: { width: 0, right: 0 },
+                      visible: { width: "100%" },
+                    }}
+                    transition={{
+                      duration: 0.8,
+                      ease: "easeInOut",
+                      delay: 0.25,
+                    }}
+                    className="absolute rounded-full -bottom-1 mx-px h-px w-full bg-gradient-to-r from-white/50 to-transparent"
+                  />
+                </div>
+                <div className="flex items-center gap-x-2">
+                  {item.images.map((image, index) => (
+                    <Appear
+                      key={index}
+                      variants={{
+                        hidden: { opacity: 0, scale: 0.9 },
+                        visible: { opacity: 1, scale: 1 },
+                      }}
+                      transition={{
+                        duration: 0.5,
+                        ease: "easeInOut",
+                        delay: 0.25 + 0.1 * index,
+                      }}
+                    >
+                      <Image
+                        key={index}
+                        src={image}
+                        alt={item.title + " logo"}
+                        width={40}
+                        height={40}
+                        className="size-8 hover:scale-110 duration-200 ease-in-out transition opacity-70 hover:opacity-100"
+                      />
+                    </Appear>
+                  ))}
+                </div>
+              </div>
+              <p className="leading-loose">{item.description}</p>
+            </div>
+          ))}
+          {/* <div className="w-full space-y-10">
             <div className="flex flex-col items-start gap-4">
               <div className="relative w-fit">
                 <h4 className="font-medium text-2xl md:text-3xl w-full">
@@ -102,7 +168,7 @@ const WhatIDo = () => {
               user-friendly, ensuring you and your team can easily manage
               content without hassle.
             </p>
-          </div>
+          </div> */}
         </TwoColumnGrid>
       </section>
     </Container>
