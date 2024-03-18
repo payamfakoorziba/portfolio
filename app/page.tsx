@@ -3,6 +3,7 @@ import MyWork from "@/components/sections/my-work";
 import Testimonials from "@/components/sections/testimonials";
 import WantToWork from "@/components/sections/want-to-work";
 import WhatIDo from "@/components/sections/what-I-do";
+import toast from "react-hot-toast";
 
 export default function Home() {
   return (

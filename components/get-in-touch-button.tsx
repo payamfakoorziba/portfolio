@@ -26,6 +26,7 @@ import { Textarea } from "./ui/textarea";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import LoadingSpinner from "./loading-spinner";
+import toast from "react-hot-toast";
 
 const formSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -55,7 +56,7 @@ const GetInTouch = ({
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      const response = await fetch("/api/send", {
+      await fetch("/api/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -63,6 +64,7 @@ const GetInTouch = ({
         body: JSON.stringify({ data: values }),
       });
       setIsOpen(false);
+      toast.success("Message sent successfully!");
       form.reset();
     } catch (error) {
       console.error(error);
